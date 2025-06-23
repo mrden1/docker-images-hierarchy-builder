@@ -1,0 +1,5 @@
+bokeh==3.6.3
+click==8.1.8
+docker==7.1.0
+matplotlib==3.10.0
+networkx==3.4.2

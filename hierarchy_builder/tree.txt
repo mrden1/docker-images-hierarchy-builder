@@ -1,0 +1,6 @@
+cat
+cat tiger
+cat leon
+cat cheetah
+cat cheetah leopard
+cat cheetah leopard puma
