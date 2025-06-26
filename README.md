@@ -120,7 +120,7 @@ pip3 install -r /path/to/requirements.txt
 #### Drawing Graph
 
 ```bash
-python3 -m hierarchy_builder.main show-hierarchy --tree-file hierarchy_builder/tree.txt
+python3 -m hierarchy_builder.run show-hierarchy --tree-file hierarchy_builder/tree.txt
 ```
 
 #### Initial build (hierarchy creation)
@@ -128,26 +128,26 @@ python3 -m hierarchy_builder.main show-hierarchy --tree-file hierarchy_builder/t
 > **NOTE:** `Need to execute in first time for building full hierarchy`
 
 ```bash
-python3 -m hierarchy_builder.main build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat --push true
+python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat --push true
 ```
 
 #### Building Images locally
 
 ```bash
 # dry-run mode
-python3 -m hierarchy_builder.main build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat --dry-run true
+python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat --dry-run true
 
 # new image without deps with push to docker registry
-python3 -m hierarchy_builder.main build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat --push true --disable-deps true
+python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat --push true --disable-deps true
 
 # new image with deps without push to docker registry
-python3 -m hierarchy_builder.main build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat
+python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cat
 
 # new image for cheetah without deps with push to docker registry
-python3 -m hierarchy_builder.main build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cheetah --push true --disable-deps true
+python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cheetah --push true --disable-deps true
 
 # new image for cheetah wit deps without push to docker registry
-python3 -m hierarchy_builder.main build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cheetah --push true
+python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/tree.txt --git-diff cheetah --push true
 ```
 
 ### Adding a New Image
@@ -203,7 +203,7 @@ For example:
 ```bash
 git_diff=$(git diff --name-only  | grep -i dockerfile | cut -f1 -d '/')
 
-python3 -m hierarchy_builder.main build-hierarchy \
+python3 -m hierarchy_builder.run build-hierarchy \
     --tree-file hierarchy_builder/tree.txt \
     --git-diff ${git_diff} \
     --push true \
