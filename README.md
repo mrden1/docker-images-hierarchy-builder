@@ -166,7 +166,7 @@ python3 -m hierarchy_builder.run build-hierarchy --tree-file hierarchy_builder/t
         cat cheetah leopard
         cat cheetah leopard puma <new_image>
         ```
--   Добавить необходимые значения в словарь `images` в файле `config.py`, следуя примеру
+-   Add nessesary value into `images` in the `config.py`, according to example
 
 ```python
 ...
